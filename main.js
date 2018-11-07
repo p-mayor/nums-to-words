@@ -24,16 +24,19 @@ function wordify(int) {
                 num_string+=tens[tens_place-1]+'-'+ones[i-tens_place*10-1]+', '
             }
         } else if(index_str.length==3){
+            const ones_place = parseInt(index_str[2])-1
+            const tens_place = parseInt(index_str[1])-1
+            const hunds_place = parseInt(index_str[0])-1
             if(index_str[2]==0 && index_str[1]==0){
-                num_string+=ones[parseInt(index_str[0])-1]+' hundred, '
+                num_string+=ones[hunds_place]+' hundred, '
             } else if(index_str[2]==0) {
-                num_string+=ones[parseInt(index_str[0])-1]+' hundred '+tens[parseInt(index_str[1])-1]+', '
+                num_string+=ones[hunds_place]+' hundred '+tens[tens_place]+', '
             } else if(index_str[1]==0) {
-                num_string+=ones[parseInt(index_str[0])-1]+' hundred'+' '+ones[parseInt(index_str[2])-1]+', '
+                num_string+=ones[hunds_place]+' hundred'+' '+ones[ones_place]+', '
             } else if(index_str[1]==1){
-                num_string+=ones[parseInt(index_str[0])-1]+' hundred'+' '+teens[parseInt(index_str[2])-1]+', '
+                num_string+=ones[hunds_place]+' hundred'+' '+teens[ones_place]+', '
             } else if(index_str[1]!=1 && index_str[1]!=0) {
-                num_string+=ones[parseInt(index_str[0])-1]+' hundred'+' '+tens[parseInt(index_str[1])-1]+'-'+ones[parseInt(index_str[2])-1]+', '
+                num_string+=ones[hunds_place]+' hundred'+' '+tens[tens_place]+'-'+ones[ones_place ]+', '
             }
         } else {
             num_string+='one thousand'
