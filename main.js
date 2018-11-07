@@ -21,11 +21,12 @@ function wordify(int) {
                 num_string+=teens[i-11]+', '
             } else if(index_str[0]!='1'){
                 const tens_place = parseInt(index_str[0])
-                num_string+=tens[tens_place-1]+'-'+ones[i-tens_place*10-1]+', '
+                const ones_place = parseInt(index_str[1])
+                num_string+=tens[tens_place-1]+'-'+ones[ones_place-1]+', '
             }
         } else if(index_str.length==3){
-            const ones_place = parseInt(index_str[2])-1
-            const tens_place = parseInt(index_str[1])-1
+            ones_place = parseInt(index_str[2])-1
+            tens_place = parseInt(index_str[1])-1
             const hunds_place = parseInt(index_str[0])-1
             if(index_str[2]==0 && index_str[1]==0){
                 num_string+=ones[hunds_place]+' hundred, '
