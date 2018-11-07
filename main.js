@@ -7,9 +7,6 @@ function wordify(int) {
     let tens = ['ten','twenty','thirty','fourty','fifty','sixty','seventy',
         'eighty','ninety']
     
-    
-    
-
     for(let i=1; i<=int; i++) {
         const index_str = i.toString()
         if(index_str.length==1){
@@ -43,7 +40,6 @@ function wordify(int) {
             num_string+='one thousand'
         }
     }
-        
 
     let newDiv = document.createElement("div")
     let text = document.createTextNode(num_string)
